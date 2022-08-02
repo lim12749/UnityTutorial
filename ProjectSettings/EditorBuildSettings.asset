@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/2Day/Scenes/Socoban.unity
+    guid: e913fb061b43c7145a44f0d9b97da035
   m_configObjects: {}
