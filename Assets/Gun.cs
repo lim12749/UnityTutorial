@@ -29,7 +29,7 @@ public class Gun : MonoBehaviour
     public float fireDelayTime =0.12f; //총을 발사한 지연시간 (연사력)
 
     //총 상태 정보
-    public float damage = 10f;
+    public int damage = 10;
     public float distance;
     public int ammoToFill; //남은 총알 계산
 
@@ -59,9 +59,22 @@ public class Gun : MonoBehaviour
                 if (Physics.Raycast(gunFirePosition.position, gunFirePosition.forward * distance, out hit))
                 {
                     Debug.Log(hit.collider.name);
+                    //타겟기능을 레이의 충돌된 물체로부터 가져와서 사용하겠다 
+                    Target hitTarget = hit.collider.GetComponent<Target>();
+                    //기능을 제대로 가져왔는지 확인하는 if문
+                    if (hitTarget != null)
+                    {
+                        //데미지를 주는 함수를 실행
+                        hitTarget.Damage(damage);
+                    }
+                    // !는 부정하다
+                    if(hit.rigidbody != null)
+                    {
+                        hit.rigidbody.AddForce(-hit.normal * 100f);
+                    }
                 }
-                Debug.DrawRay(gunFirePosition.position, gunFirePosition.forward * distance,
-                    Color.red);
+                //레이 체크용 디버그
+                Debug.DrawRay(gunFirePosition.position, gunFirePosition.forward * distance,Color.red);
 
                 StartCoroutine(ShotEffect(hit.point));
                 lastFireTime = Time.time;
