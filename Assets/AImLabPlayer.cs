@@ -13,6 +13,8 @@ public class AImLabPlayer : MonoBehaviour
     //게임이 시작되면 한번 실행함
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        
         myRigidbody = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
     }
@@ -43,11 +45,13 @@ public class AImLabPlayer : MonoBehaviour
         myRigidbody.MoveRotation(myRigidbody.rotation 
             * Quaternion.Euler(rot));
     }
+
+    //위아래 회전
     void PlayerCamRotate()
     {
         MouseY -= Input.GetAxis("Mouse Y");
 
-        playerCamera.transform.localEulerAngles 
-            = new Vector3(MouseY, 0f, 0f);
+        MouseY = Mathf.Clamp(MouseY, -90, 90);
+        playerCamera.transform.localEulerAngles  = new Vector3(MouseY, 0f, 0f);
     }
 }
