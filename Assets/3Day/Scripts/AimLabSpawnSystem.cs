@@ -41,7 +41,6 @@ public class AimLabSpawnSystem : MonoBehaviour
             }
             else
             {
-                print("½Ã¹ß");
                 yield return null;
             }
         }
