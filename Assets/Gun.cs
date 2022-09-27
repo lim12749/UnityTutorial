@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public Transform muuzle;
-    public Projectile projectile;//투사체
+    public Bullet projectile;//투사체
     public float msBetweenShots = 100f;
     public float muzzleVelocity = 35f;
 
@@ -14,11 +14,14 @@ public class Gun : MonoBehaviour
     
     public void Shoot()
     {
+        Debug.Log("총알 생성");
         if(Time.time > nextShotTime)
         {
             nextShotTime = Time.time + msBetweenShots / 1000f;
-            Projectile _projectile = Instantiate(projectile, muuzle.position, muuzle.rotation);
+            Bullet _projectile = Instantiate(projectile, muuzle.position, muuzle.rotation);
             _projectile.SetSpeed(muzzleVelocity);
+            
+            Destroy(_projectile.gameObject, 5f);
         }
     }
 }

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2837759867266997629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8572609918098447105}
+  m_Layer: 0
+  m_Name: BulletPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8572609918098447105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837759867266997629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.113, z: 0.2719}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6493783251421649618}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6493783251421349602
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6493783251421649618}
+  - component: {fileID: -2992287857361268765}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -616,6 +648,24 @@ Transform:
   - {fileID: 6493783251421649608}
   - {fileID: 6493783251421649614}
   - {fileID: 6493783251421649612}
+  - {fileID: 8572609918098447105}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2992287857361268765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6493783251421349618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc712c0a9ec919429c9c9b45c8bc875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muuzle: {fileID: 8572609918098447105}
+  projectile: {fileID: -6081618133574889502, guid: e99dfc3ccf536954c8a5fd25940d59fc, type: 3}
+  msBetweenShots: 100
+  muzzleVelocity: 20
+  nextShotTime: 0

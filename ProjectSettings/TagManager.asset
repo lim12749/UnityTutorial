@@ -6,6 +6,8 @@ TagManager:
   tags:
   - EndPoint
   - Target
+  - PlayerEyes
+  - ATTACK
   layers:
   - Default
   - TransparentFX

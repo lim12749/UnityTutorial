@@ -12,6 +12,7 @@ public class PlayerInput : MonoBehaviour
 
     Animator PlayerAnim;
 
+    public int weaponValue=0;
     private void Start()
     {
         controller = GetComponent<Player>();
@@ -19,7 +20,7 @@ public class PlayerInput : MonoBehaviour
         
         mainCamera = Camera.main;
     }
-    private void FixedUpdate()
+    private void Update()
     {
         float hAxis = Input.GetAxis("Horizontal");
         float vAxis = Input.GetAxis("Vertical");    
@@ -30,7 +31,6 @@ public class PlayerInput : MonoBehaviour
 
         controller.Move(moveVelocity);
 
-
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayhit;
 
@@ -40,9 +40,24 @@ public class PlayerInput : MonoBehaviour
             controller.LookAt(rayhit.point);
         }
 
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("林公扁");
+            weaponValue = 1;
+            WaponManager.Instace.ChangeWeapon(WeaponState.MainWeapon);
+        }
+        else if( Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Debug.Log("3 辟立公扁");
+            weaponValue = 3;
+            WaponManager.Instace.ChangeWeapon(WeaponState.Sward);
+
+        }
+        PlayerAnim.SetInteger("WeaponChange", weaponValue);
+
         PlayerAnim.SetFloat("Horizontal", hAxis);
         PlayerAnim.SetFloat("Vertical", vAxis);
 
-
     }
+    
 }
