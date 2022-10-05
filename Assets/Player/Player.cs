@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -13,7 +15,7 @@ public class Player : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
         waponManager = GetComponent<WaponManager>();
     }
-    private void FixedUpdate()
+    private void Update()
     {
         myRigidbody.MovePosition(myRigidbody.position + velocity * Time.deltaTime);
         
@@ -29,8 +31,12 @@ public class Player : MonoBehaviour
             {
                 waponManager.SwardAttack();
             }
-
         }
+        else if(Input.GetKeyDown(KeyCode.R))
+        {
+            waponManager.equippedWeapon.GetComponent<Gun>().Reload();
+        }
+
     }
     public void Move(Vector3 _move)
     {

@@ -13,7 +13,7 @@ public class WaponManager : MonoBehaviour
 
     public Transform[] weaponHold;//총이 생성되고 장착되는 위치
     public Gun startingGun; //처음 시작에 사용하는 무기(권총)
-    [SerializeField] private GameObject equippedWeapon;
+    [SerializeField] public GameObject equippedWeapon;
 
     private void Awake()
     {

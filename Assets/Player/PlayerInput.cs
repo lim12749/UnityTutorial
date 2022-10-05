@@ -51,8 +51,8 @@ public class PlayerInput : MonoBehaviour
             Debug.Log("3 근접무기");
             weaponValue = 3;
             WaponManager.Instace.ChangeWeapon(WeaponState.Sward);
-
         }
+
         PlayerAnim.SetInteger("WeaponChange", weaponValue);
 
         PlayerAnim.SetFloat("Horizontal", hAxis);

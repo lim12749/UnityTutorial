@@ -669,3 +669,6 @@ MonoBehaviour:
   msBetweenShots: 100
   muzzleVelocity: 20
   nextShotTime: 0
+  ammoRemaining: 30
+  magcapacity: 10
+  magAmmo: 0
