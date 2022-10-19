@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : HealthSystem
 {
-    
+    public Slider HealthValue; //Ã¤·Â UI
+
     void Start()
     {
         
@@ -17,10 +19,8 @@ public class PlayerHealth : HealthSystem
     }
     public override void OnDamage(float _damage)
     {
-        base.OnDamage(_damage);
+        HealthValue.value -= _damage;
+        
     }
-    public override void Die()
-    {
-        base.Die();
-    }
+
 }

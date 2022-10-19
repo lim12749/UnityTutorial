@@ -135,7 +135,20 @@ public class Monster : HealthSystem
         //죽지않고 마지막 공격시점에서 + 딜레이 시간 만큼 지났을경우
         if(!isDead && Time.time >= lastAttackTime + timeBetAccack)
         {
+            //상대방이 가지고있는지 체크 
             HealthSystem attacTarget = other.GetComponent<HealthSystem>();
+
+            if(attacTarget!=null &&attacTarget ==_target)
+            {
+                //공격 시간 갱신
+                lastAttackTime = Time.time;
+
+                Vector3 hipoint = other.ClosestPoint(transform.position);
+                Vector3 hitNomal = transform.position - other.transform.position;
+
+                //공격 처리 피격은 플레이어 헬스에서 처리
+                attacTarget.OnDamage(Damage);
+            }
         }
     }
 }
