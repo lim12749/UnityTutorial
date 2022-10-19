@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] private float bulletDamage = 20f; //ÃÑ¾Ë µ¥¹ÌÁö
 
-    public void SetSpeed(float _BulletSpeed)
+    public void SetBullet(float _BulletSpeed)
     {
         bulletPower = _BulletSpeed;
     }
@@ -20,6 +20,19 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        HealthSystem target = collision.collider.GetComponent<HealthSystem>();
+     
+        if(target != null)
+        {
+            target.OnDamage(bulletDamage);
+            Destroy(this.gameObject);
+            Debug.Log(target.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+
     }
 }

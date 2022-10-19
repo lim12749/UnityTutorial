@@ -47,9 +47,9 @@ public class Gun : MonoBehaviour
             {
                 nextShotTime = Time.time + msBetweenShots / 1000f;
                 Bullet _projectile = Instantiate(projectile, muuzle.position, muuzle.rotation);
-                _projectile.SetSpeed(muzzleVelocity);
+                _projectile.SetBullet(muzzleVelocity);
 
-                Destroy(_projectile.gameObject, 5f);
+                //Destroy(_projectile.gameObject, 5f);
 
                 magAmmo--; //총알 감소
                 if (magAmmo <= 0) //0보다 작거나 같은경우 
