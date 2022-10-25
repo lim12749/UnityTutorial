@@ -13,7 +13,9 @@ public class Monster : HealthSystem
     [Header("Mostet INFO")]
     public float Damage = 10f;
     public float timeBetAccack = 0.5f; //공격 간격
+    public float AttackRange = 10f;
     private float lastAttackTime; //마지막 공격시점
+
     [SerializeField] LayerMask _whatIsTarget; //레이어를 이용하여 추적할 대상 결정
 
     [Header("Effect")]
@@ -77,8 +79,8 @@ public class Monster : HealthSystem
             {
                 _pathFinder.isStopped = true; //멈추고 대기상태가됨
 
-                //핵심 기술 
-                Collider[] colliders = Physics.OverlapSphere(transform.position, 10f, _whatIsTarget);
+                //핵심 기술 b n
+                Collider[] colliders = Physics.OverlapSphere(transform.position, AttackRange, _whatIsTarget);
 
                 for(int i=0;i<colliders.Length;i++)
                 {
