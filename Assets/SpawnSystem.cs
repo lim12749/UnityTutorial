@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class SpawnSystem : MonoBehaviour
 {
     [Header("SpawnInfo")]
@@ -30,14 +30,14 @@ public class SpawnSystem : MonoBehaviour
 
     private void UpdateUI()
     {
-        //UIManager.Instance
+        UIManager.Instance.UpdateWave(wave);
     }
 
     private void SpawnWave()
     {
         //???????? ???? ???????? ????
-        wave++;
-
+        wave++; // 
+                        //받은 숫자가 1.5 이상인경우 반올림 하는친구 입니다.
         int spawnCount = Mathf.RoundToInt(wave * 1.5f);
 
         for(int i=0; i<spawnCount; i++)
@@ -61,5 +61,7 @@ public class SpawnSystem : MonoBehaviour
         _monster.OnDeath += () => GameManager.Instace.AddScore(100);
         _monster.OnDeath += () => _monster.GetComponent<DropItem>().SpawnItem(_monster.transform);
 
+       
+        
     }
 }

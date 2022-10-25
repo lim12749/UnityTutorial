@@ -56,7 +56,11 @@ public class Player : MonoBehaviour
         {
             _itme.UseItem(this.gameObject);
         }
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 
 }

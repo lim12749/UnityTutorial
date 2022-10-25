@@ -9,6 +9,8 @@ public class DropItem : MonoBehaviour
     public void SpawnItem(Transform _Tr)
     {
         int idx = Random.Range(0, items.Length);
-        Instantiate(items[idx].gameObject, _Tr.position, _Tr.rotation);    
+        
+        GameObject _item =  Instantiate(items[idx].gameObject, _Tr.position, _Tr.rotation);    
+        
     }
 }
