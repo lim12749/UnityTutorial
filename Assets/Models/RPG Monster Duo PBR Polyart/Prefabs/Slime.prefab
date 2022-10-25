@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 2140345867}
   - component: {fileID: 2140345871}
   - component: {fileID: 7614804325900458277}
+  - component: {fileID: 632547661}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -214,6 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingHealth: 100
+  _target: {fileID: 0}
+  _pathFinder: {fileID: 0}
+  _myAnimator: {fileID: 0}
   Damage: 10
   timeBetAccack: 0.5
   AttackRange: 30
@@ -223,6 +227,7 @@ MonoBehaviour:
   MyAudiosource: {fileID: 2140345870}
   hitSound: {fileID: 0}
   deathSound: {fileID: 0}
+  _item: {fileID: 0}
 --- !u!195 &2140345871
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -258,6 +263,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.51, z: 0.78}
+--- !u!114 &632547661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090219386143568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29a70471fa674a2d8dd0024253d85c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 2797168269220049934, guid: 126b33e2b961b4ea4a040fc3635553ea, type: 3}
 --- !u!1 &1159745215084782
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,12 +19,12 @@ public class Player : MonoBehaviour
     {
         myRigidbody.MovePosition(myRigidbody.position + velocity * Time.deltaTime);
         
-        //ฐ๘ฐÝ
+        //????
         if(Input.GetMouseButton(0))
         {
             if(waponManager.weaponState == WeaponState.MainWeapon)
             {
-                Debug.Log("รั น฿ป็");
+                Debug.Log("?? ????");
                 waponManager.Fire();
             }
             else if(waponManager.weaponState == WeaponState.Sward)
@@ -47,6 +47,16 @@ public class Player : MonoBehaviour
         Vector3 CorrectedPoint = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
         transform.LookAt(CorrectedPoint);
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Item _itme = other.GetComponent<Item>();
+
+        if(_itme !=null)
+        {
+            _itme.UseItem(this.gameObject);
+        }
+
+    }
 
 }

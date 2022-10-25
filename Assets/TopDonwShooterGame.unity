@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45130283, g: 0.5009539, b: 0.57320166, a: 1}
+  m_IndirectSpecularColor: {r: 0.45130217, g: 0.50095284, b: 0.57319987, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -886,17 +886,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3225567137042937786, guid: 50e51e6ac5d42474c898ab0926512e39, type: 3}
   m_PrefabInstance: {fileID: 631899057}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &632547654 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2140345867, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
-  m_PrefabInstance: {fileID: 623762423}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59de3819897f2c848bc3aedc65baf9f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &647560875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1359,13 +1348,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94e2af5bde5bc147b5fca21d08dc4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterObj: {fileID: 632547654}
+  MonsterObj: {fileID: 2140345867, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
   SpawnPoint:
   - {fileID: 148890309}
   - {fileID: 1845891670}
   - {fileID: 1008922579}
   - {fileID: 75687829}
-  mosters: []
+  monsters: []
   wave: 0
 --- !u!1001 &879652435
 PrefabInstance:

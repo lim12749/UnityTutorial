@@ -14,7 +14,7 @@ public class SpawnSystem : MonoBehaviour
 
     private void Update()
     {
-        //플레이어가 죽은경우 isGameOver스폰하지않고 Update를 탈출함
+        //?????????? ???????? isGameOver???????????? Update?? ??????
         if (GameManager.Instace != null&& GameManager.Instace.isGameOver)
         {
             return;
@@ -35,7 +35,7 @@ public class SpawnSystem : MonoBehaviour
 
     private void SpawnWave()
     {
-        //웨이브에 맞춰 적생성할 예정
+        //???????? ???? ???????? ????
         wave++;
 
         int spawnCount = Mathf.RoundToInt(wave * 1.5f);
@@ -56,9 +56,10 @@ public class SpawnSystem : MonoBehaviour
 
         monsters.Add(_monster);
 
-        _monster.OnDeath += () => monsters.Remove(_monster); //몬스터가 죽으면 리스트에서 지움
-        _monster.OnDeath += () => Destroy(_monster.gameObject, 5f); //몬스터가 죽으면 10초뒤에 죽음
+        _monster.OnDeath += () => monsters.Remove(_monster); //???????? ?????? ?????????? ????
+        _monster.OnDeath += () => Destroy(_monster.gameObject, 5f); //???????? ?????? 10?????? ????
         _monster.OnDeath += () => GameManager.Instace.AddScore(100);
+        _monster.OnDeath += () => _monster.GetComponent<DropItem>().SpawnItem(_monster.transform);
 
     }
 }
