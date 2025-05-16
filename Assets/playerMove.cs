@@ -22,16 +22,16 @@ public class playerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        myRigidboy.velocity = MoveVelocity;
+        myRigidboy.linearVelocity = MoveVelocity;
     }
     // Update is called once per frame
     void Update()
     {
-        //¿òÁ÷ÀÓ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         mvoeInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         MoveVelocity = mvoeInput * moveSpeed;
 
-        //È¸Àü
+        //È¸ï¿½ï¿½
         Ray CameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
         float rayLength;
